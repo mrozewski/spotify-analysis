@@ -12,4 +12,4 @@ Use the combine_json_to_csv.py file, changing the path variable to the appropria
 
 This will output a csv with all of your listening data. Some of the columns have been trimmed, drop null, ms_played converted to a timedelta duration. This about halved the file size for me.
 
-
+Get genre works on a small scale, but not with the whole file due to limitations of Spotify's API. Could look into batching it, need to investigate further.
