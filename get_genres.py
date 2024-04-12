@@ -10,8 +10,6 @@ import numpy as np
 
 df = pd.read_csv('/Users/michaelrozewski/Desktop/Spotify Extended Streaming History/Streaming_History_Audio_2022-2023_10.csv', encoding='utf-8')
 
-sample_df = df.head(10)
-
 sample_df['master_metadata_album_artist_name'] = df['master_metadata_album_artist_name'].astype(str).replace('nan', np.nan)
 
 print(sample_df)
@@ -33,9 +31,9 @@ for artist_name in sample_df['master_metadata_album_artist_name']:
     
 sample_df['genre'] = sp.search(search_str)
 
+df['seconds']= df['ms_played'] / 1000
 
 df = pd.read_csv('/Users/michaelrozewski/Desktop/Spotify Extended Streaming History/Streaming_History_Audio_2022-2023_10.csv')
 
-df['seconds']= df['ms_played'] / 1000
 
-print(df[['master_metadata_track_name', 'ms_played', 'seconds']]).head()
+
