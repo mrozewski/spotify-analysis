@@ -9,7 +9,8 @@ Created on Thu Apr 11 17:07:14 2024
 import os
 import pandas as pd
 
-path =
+#Path, put the path to the destination folder in these parantheses
+path = ""
 
 files = os.listdir(path)
 df_list = []
