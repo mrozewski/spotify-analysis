@@ -9,7 +9,7 @@ Created on Thu Apr 11 17:07:14 2024
 import os
 import pandas as pd
 
-#Path, put the path to the destination folder in these parantheses
+#Put the path to the destination folder in these parantheses
 path = ""
 
 files = os.listdir(path)
