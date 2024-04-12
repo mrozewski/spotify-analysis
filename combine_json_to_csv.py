@@ -9,7 +9,7 @@ Created on Thu Apr 11 17:07:14 2024
 import os
 import pandas as pd
 
-path = "/Users/michaelrozewski/Desktop/data"
+path =
 
 files = os.listdir(path)
 df_list = []
