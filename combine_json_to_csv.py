@@ -28,6 +28,19 @@ for file in files:
 
 #now, concatenate the list of dfs together, translate to csv
 df = pd.concat(df_list)
+
+#Let's trim some fields so the file isn't quite so big
+#We can take the columns we want, drop any rows with missing values
+df.dropna()
+df_final = df[['ts', 'ms_played', 'master_metadata_track_name', 'master_metadata_album_artist_name',
+'master_metadata_album_album_name','shuffle', 'skipped', 'offline' ]]
+
+#Let's convert 'ms_played' to timestamp, with a separate field to make it easy for summing later on
+
+df_final['duration'] = pd.to_timedelta(df_final['ms_played'] // 1000, unit='s')
+df_final['duration_seconds'] = df_final['duration'].dt.total_seconds()
+
+
 df.to_csv(os.path.join(path, 'combined_data.csv'))
 
 
